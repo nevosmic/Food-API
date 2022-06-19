@@ -53,6 +53,11 @@ def max_rating(reviews):
 max=max_rating(reviews)
 
 users_list = find_highest_user(reviews,max)
+output_file = open('Users_Info.txt', 'a')
+output_file.write(str(users_list))
+output_file.write('\n')
+output_file.write('AverageRating: {}'.format(data['averageRating']))
 print(users_list)
-print('AverageRating: ',data['averageRating'])
+print('AverageRating: {}'.format(data['averageRating']))
 
+output_file.close()
