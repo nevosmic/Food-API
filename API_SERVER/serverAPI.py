@@ -1,23 +1,4 @@
 import requests
-import pandas as pd
-import json
-'''
-import http.client
-
-conn = http.client.HTTPSConnection("yummly2.p.rapidapi.com")
-
-headers = {
-    'X-RapidAPI-Key': "38fe48db78msha6986defdf1dc87p1f30e5jsn7d3b1929314d",
-    'X-RapidAPI-Host': "yummly2.p.rapidapi.com"
-    }
-
-conn.request("GET", "/feeds/auto-complete?q=chicken%20soup", headers=headers)
-
-res = conn.getresponse()
-data = res.read()
-
-print(data.decode("utf-8"))
-'''
 
 url = "https://yummly2.p.rapidapi.com/reviews/list"
 
