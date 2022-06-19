@@ -42,8 +42,8 @@ for x in reviews:
 def find_highest_user(reviews, max_rating):
 	for x in reviews:
 		if (x['rating'] == max_rating):
-			print(x['displayName'])
-			print(x['pictureUrl'])
+			print(x['profiles'][0]['displayName'])
+			print(x['profiles'][0]['pictureUrl'])
 
 
 def max_rating(reviews):
@@ -55,8 +55,6 @@ def max_rating(reviews):
 
 max=max_rating(reviews)
 
-#find_highest_user(reviews,max)
-
-#print(reviews['profiles'])
+find_highest_user(reviews,max)
 
 
