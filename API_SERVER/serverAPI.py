@@ -30,20 +30,17 @@ headers = {
 
 response = requests.request("GET", url, headers=headers, params=querystring)
 
-print(response.json())
 data = response.json()
-print(data.keys())
-print(data['averageRating'])
-reviewImages = data['reviewImages']
+
 reviews = data['reviews']
-for x in reviews:
-	print(x)
+
 
 def find_highest_user(reviews, max_rating):
+	users_list =[]
 	for x in reviews:
 		if (x['rating'] == max_rating):
-			print(x['profiles'][0]['displayName'])
-			print(x['profiles'][0]['pictureUrl'])
+			users_list.append({x['profiles'][0]['displayName']:x['profiles'][0]['pictureUrl']})
+	return users_list
 
 
 def max_rating(reviews):
@@ -55,6 +52,7 @@ def max_rating(reviews):
 
 max=max_rating(reviews)
 
-find_highest_user(reviews,max)
-
+users_list = find_highest_user(reviews,max)
+print(users_list)
+print('AverageRating: ',data['averageRating'])
 
